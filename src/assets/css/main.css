@@ -1,0 +1,69 @@
+.dropdown.nav-item {
+  margin: 0 5px;
+}
+
+.navbar.navbar-light.navbar-expand.navigation-clean-button {
+  padding: 10px;
+}
+
+.row {
+  color: rgb(60,61,62);
+}
+
+.card-title, .card-header {
+  margin-bottom: 30px;
+}
+
+#info_card {
+  margin-top: 5%;
+}
+
+#infoCard {
+}
+
+#content {
+  margin-top: 20px;
+}
+
+.text-muted.card-subtitle.mb-2 {
+}
+
+.dropdown-menu.show {
+}
+
+.dropdown-item {
+  font-size: 15px;
+}
+
+#resultTitle {
+  padding: 10px;
+  margin: 0;
+}
+
+.container {
+}
+
+#result {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.d-md-flex.justify-content-md-center {
+  margin-top: 20px;
+}
+
+#labelOperacao {
+  font-size: 16px;
+  color: rgb(28,28,28);
+}
+
+#mynetwork {
+  border: 1px solid #b4b4b4;
+}
+
+input {
+  margin: 2px;
+  padding: 5px;
+  font-size: 15px;
+}
+

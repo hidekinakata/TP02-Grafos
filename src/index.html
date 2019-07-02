@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <title>TP02 Grafos</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600"
+        />
+        <link rel="stylesheet" href="assets/css/styles.min.css" />
+    </head>
+
+    <body>
+        <div>
+            <nav
+                class="navbar navbar-light navbar-expand navigation-clean-button"
+            >
+                <div class="container">
+                    <a class="navbar-brand" href="#">TP02 - Grafos</a
+                    ><button
+                        class="navbar-toggler"
+                        data-toggle="collapse"
+                        data-target="#navcol-1"
+                    >
+                        <span class="sr-only">Toggle navigation</span
+                        ><span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="dropdown nav-item">
+                                <a
+                                    class="dropdown-toggle nav-link text-white bg-primary border rounded border-primary"
+                                    data-toggle="dropdown"
+                                    aria-expanded="false"
+                                    href="#"
+                                    >Menu</a
+                                >
+                                <div class="dropdown-menu" role="menu">
+                                    <a
+                                        id="loadBtn"
+                                        class="dropdown-item"
+                                        role="presentation"
+                                        href="#"
+                                        >Carregar Grafo</a
+                                    >
+                                    <div
+                                        class="dropdown-divider"
+                                        role="presentation"
+                                    ></div>
+                                    <a
+                                        id="exitBtn"
+                                        class="dropdown-item"
+                                        role="presentation"
+                                        href="#"
+                                        >Sair</a
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="content">
+            <div class="container">
+                <div class="row d-md-flex align-items-md-center">
+                    <div class="col-7" id="infoCard">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="text-center card-title">
+                                    Informações do grafo&nbsp;
+                                </h4>
+                                <div class="row d-block">
+                                    <div class="col d-md-flex">
+                                        <label>Nós:&nbsp;</label
+                                        ><label id="labelNos">????</label>
+                                    </div>
+                                    <div class="col">
+                                        <label>Arestas:&nbsp;</label
+                                        ><label id="labelArestas">?????</label>
+                                    </div>
+                                    <div class="col">
+                                        <label>Direcionado:&nbsp;</label
+                                        ><label id="labelDirecionado"
+                                            >??????</label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5" id="optionsCard">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Opções</h4>
+                                <p class="card-text">
+                                    Selecione uma das opções para operar sobre o
+                                    grafo:
+                                </p>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="dropdown">
+                                            <button
+                                                id="opBtn"
+                                                class="btn btn-primary dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-expanded="false"
+                                                type="button"
+                                            >
+                                                Selecione...
+                                            </button>
+                                            <div
+                                                class="dropdown-menu border-primary"
+                                                role="menu"
+                                            >
+                                                <a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op1"
+                                                    >Componentes Conexas</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op2"
+                                                    >Coloração</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op3"
+                                                    >Árvore geradora mínima</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op4"
+                                                    >Caminho mínimo</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op5"
+                                                    >Conectividade</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op6"
+                                                    >Transposição</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op7"
+                                                    >Exibir em ordem
+                                                    topológica</a
+                                                ><a
+                                                    class="dropdown-item"
+                                                    role="presentation"
+                                                    href="#"
+                                                    id="op8"
+                                                    >Busca em largura</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal_op8">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Selecione o nó de início</h4>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input
+                            id="arg_op8"
+                            class="border rounded border-primary"
+                            type="number"
+                            placeholder="Digite o ID do nó"
+                        />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            id="ok_op8"
+                            class="btn btn-primary"
+                            data-dismiss="modal"
+                            type="button"
+                        >
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal_op4">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Selecione o nó de início</h4>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input
+                            id="arg_op4"
+                            class="border rounded border-primary"
+                            type="number"
+                            placeholder="Digite o ID do nó"
+                        />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            id="ok_op4"
+                            class="btn btn-primary"
+                            data-dismiss="modal"
+                            type="button"
+                        >
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <input
+            type="file"
+            id="fileInput"
+            style="width: 0px;height: 0px;margin: 0;padding: 0;"
+        />
+
+        <script>
+            let $ = require("jquery");
+            require("popper.js");
+            require("bootstrap");
+        </script>
+
+        <script src="index.js"></script>
+    </body>
+</html>
